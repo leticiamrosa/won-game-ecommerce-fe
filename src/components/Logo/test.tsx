@@ -1,4 +1,5 @@
 import { screen } from '@testing-library/react'
+import 'jest-styled-components'
 import { renderWithTheme } from 'utils/tests/helpers'
 
 import Logo from '.'
@@ -49,5 +50,18 @@ describe('<Logo />', () => {
 
     // then
     expect(element).toHaveStyle({ width: '20rem' })
+  })
+
+  it('should render a bigger logo without text when the hideOnMobile is true', () => {
+    // given
+    renderWithTheme(<Logo hideOnMobile />)
+
+    // when
+    const element = screen.getByLabelText(elementText).parentElement
+
+    // then
+    expect(element).toHaveStyleRule('width', '5.8rem', {
+      media: '(max-width: 768px)'
+    })
   })
 })
