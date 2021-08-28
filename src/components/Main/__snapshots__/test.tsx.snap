@@ -49,7 +49,7 @@ exports[`Main component should render the heading 1`] = `
     src="/img/logo.svg"
   />
   <h1
-    class="styles__Title-sc-1w3czte-2"
+    class=""
   >
     React Avançado
   </h1>
